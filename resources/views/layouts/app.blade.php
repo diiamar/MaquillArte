@@ -12,7 +12,7 @@
             --rosa: #ff4da6;
             --rosa-claro: #ffe4ec;
             --oscuro: #0a0a0aff;
-            --fondo: #f2eef0ff;
+            --fondo: #f5dbe8ff;
         }
         body {
             background-color: var(--fondo);

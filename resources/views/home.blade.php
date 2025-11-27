@@ -15,27 +15,44 @@
   </header>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-5">
+   <section id="cursos" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">Servicios</h2>
+      <h2 class="text-center mb-5 fw-bold">Cursos Privados</h2>
       <div class="row g-4">
-        <div class="col-md-4 text-center">
-          <i class="bi bi-brush servicio-icon"></i>
-          <h5 class="mt-3">Maquillaje Social</h5>
-          <p>Ideal para eventos y ocasiones especiales, con estilo moderno y duradero.</p>
-        </div>
 
-        <div class="col-md-4 text-center">
-          <i class="bi bi-heart servicio-icon"></i>
-          <h5 class="mt-3">Maquillaje de Novias</h5>
-          <p>Un look único y perfecto para tu gran día, totalmente personalizado.</p>
-        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+              <img src="{{ asset('/img/fantasia1.jpeg') }}" class="card-img-top " alt="Curso-fantasia">
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-center">Fantasía</h5>
+                <p class="card-text mb-3 text-center">Curso introductorio para aprender técnicas básicas.</p>
+                <a href="#" class="btn btn-rosa w-100">Ver más</a>
+              </div>
+            </div>
+          </div>
 
-        <div class="col-md-4 text-center">
-          <i class="bi bi-person-check servicio-icon"></i>
-          <h5 class="mt-3">Moros y Cristianos</h5>
-          <p>Maquillaje artístico y temático con acabados impactantes y detallados.</p>
+          <div class="col-md-4">
+      <div class="card h-100">
+        <img src="{{ asset('/img/caracterizacion2.jpeg') }}" class="card-img-top" alt="Curso-caracterizacion">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-center">Caracterizacion</h5>
+          <p class="card-text text-center">Tu primer paso en el maquillaje festero.</p>
+          <a href="#" class="btn btn-rosa w-100">Ver más</a>
         </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="{{ asset('/img/editorial2.jpeg') }}" class="card-img-top img-fluid" alt="Curso-editorial">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-center">Editorial-Moda</h5>
+          <p class="card-text text-center">Domina las bases del maquillaje social.</p>
+          <a href="#" class="btn btn-rosa w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+
       </div>
     </div>
   </section>
@@ -43,12 +60,41 @@
   <!-- Cursos -->
   <section id="cursos" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">Cursos Destacados</h2>
+      <h2 class="text-center mb-5 fw-bold">Cursos Privados</h2>
       <div class="row g-4">
 
-        @include('partials.cursos-basic')
-        @include('partials.cursos-pro')
-        @include('partials.cursos-advanced')
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="{{ asset('/img/editorial1.jpeg') }}" class="card-img-top " alt="Curso-Automaquillaje">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-center">Automaquillaje</h5>
+          <p class="card-text mb-3 text-center">Curso introductorio para aprender técnicas básicas.</p>
+          <a href="#" class="btn btn-rosa w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="{{ asset('/img/MyC2.jpeg') }}" class="card-img-top" alt="Curso-MyC">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-center">Moros y Cristianos</h5>
+          <p class="card-text text-center">Tu primer paso en el maquillaje festero.</p>
+          <a href="#" class="btn btn-rosa w-100">Comprar curso</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="{{ asset('/img/social2.jpeg') }}" class="card-img-top img-fluid" alt="Curso-Social">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-center">Social</h5>
+          <p class="card-text text-center">Domina las bases del maquillaje social.</p>
+          <a href="#" class="btn btn-rosa w-100">Comprar curso</a>
+        </div>
+      </div>
+    </div>
 
       </div>
     </div>

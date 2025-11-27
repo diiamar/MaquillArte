@@ -4,6 +4,7 @@
     --oscuro: #1c1c1c;
     --fondo: #f3eff1;
 }
+
 body {
     background-color: var(--fondo);
     color: #212529;
@@ -32,7 +33,7 @@ body {
     color: #212529;
 }
 header {
-    background: linear-gradient(rgba(0,0,0,10), rgba(0,0,0,0.5)), url('hero.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,10), rgba(174, 35, 133, 0.5)), url('.jpg') center/cover;
     color: white;
     padding: 6rem 0;
 }

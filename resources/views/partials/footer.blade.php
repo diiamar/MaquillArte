@@ -17,7 +17,7 @@
             <span class="small">WhatsApp</span>
         </a>
 
-        <p class="mt-3 mb-0">&copy; 2025 MaquillArte. Todos los derechos reservados.</p>
+        <p class="mt-3 mb-0">&copy; 2025 Lauriimakeupp. Todos los derechos reservados.</p>
     </div>
 </footer>
 
