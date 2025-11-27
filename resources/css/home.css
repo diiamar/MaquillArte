@@ -1,0 +1,56 @@
+:root {
+    --rosa: #ff4da6;
+    --rosa-claro: #f7f2f3;
+    --oscuro: #1c1c1c;
+    --fondo: #f3eff1;
+}
+body {
+    background-color: var(--fondo);
+    color: #212529;
+    scroll-behavior: smooth;
+}
+.navbar, footer {
+    background-color: var(--oscuro);
+}
+.navbar-brand, .nav-link {
+    color: var(--rosa) !important;
+    font-weight: 600;
+}
+.nav-link:hover {
+    color: var(--rosa-claro) !important;
+}
+.btn-acento, .btn-rosa {
+    background-color: var(--rosa);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.btn-acento:hover, .btn-rosa:hover {
+    background-color: var(--rosa-claro);
+    color: #212529;
+}
+header {
+    background: linear-gradient(rgba(0,0,0,10), rgba(0,0,0,0.5)), url('hero.jpg') center/cover;
+    color: white;
+    padding: 6rem 0;
+}
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.servicio-icon {
+    font-size: 3rem;
+    color: var(--rosa);
+}
+
