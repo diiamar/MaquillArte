@@ -55,3 +55,114 @@ header h1 {
     color: var(--rosa);
 }
 
+.about-photo {
+    transition: transform 0.4s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.03);
+}
+
+.about-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.modern-card {
+    background-color: #f2e1ea; /* fondo limpio */
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.06); /* borde sutil */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10); /* sombra más fuerte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.25); /* sombra intensa al hover */
+}
+
+.modern-card .card-body h4 {
+    color: var(--oscuro);
+}
+
+.modern-card .card-body p {
+    color: #4a4a4a;
+}
+
+
+.gallery-photo {
+    height: 260px;
+    aspect-ratio: 4/3;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery-photo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.18);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-photo:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+/* CARD PREMIUM */
+.premium-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 77, 166, 0.1);
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+/* IMAGEN */
+.premium-card-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TEXTO */
+.premium-card-body {
+    padding: 25px;
+}
+
+.premium-card-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--oscuro);
+}
+
+
+.card-premium {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+    border-left: 5px solid var(--rosa);
+}
+
+.card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+

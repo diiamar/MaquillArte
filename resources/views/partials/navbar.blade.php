@@ -1,68 +1,90 @@
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: #1c1c1c; z-index: 1030;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background-color:#1c1c1c;">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#" style="color:#ff4da6;">
-         <img src="{{ asset('/img/logo2.png') }}" alt="Logo lauriimakeup" class="d-inline-block align-text-top" width="50" height="50">    
-        Lauriimakeupp</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+
+        <!-- LOGO -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
+            <img src="{{ asset('/img/logo2.png') }}" width="50" height="50" class="rounded" alt="Logo">
+            <span style="color:#ff4da6;">Lauriimakeupp</span>
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler border-2" style="border-color:#ff4da6;" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(82%) sepia(52%) saturate(2500%) hue-rotate(300deg) brightness(100%) contrast(95%);"></span>
         </button>
+
+        <!-- MENÚ -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#servicios" style="color:#ff4da6;">Servicios</a></li>
-                <li class="nav-item"><a class="nav-link" href="#cursos" style="color:#ff4da6;">Cursos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#reservas" style="color:#ff4da6;">Reservas</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacto" style="color:#ff4da6;">Contacto</a></li>
+            <ul class="navbar-nav ms-auto text-center text-lg-start">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}">
+                        <i class="bi bi-house-door-fill me-1"></i>
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('cursos') }}">Cursos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('sobre_mi') }}">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                
             </ul>
         </div>
+
     </div>
 </nav>
+
 <style>
+/* BOTÓN HAMBURGUESA */
 .navbar-toggler {
-    border: 2px solid #ff4da6;        /* borde rosa */
-    border-radius: 6px;               /* redondeado */
+    border: 2px solid #ff4da6;
+    border-radius: 6px;
+    padding: 6px;
     width: 45px;
     height: 45px;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* ICONO PERSONALIZADO */
+.navbar-toggler-icon {
+    filter: invert(82%) sepia(52%) saturate(2500%) hue-rotate(300deg) brightness(100%) contrast(95%);
+}
+
+
+
+/* LOGO + TEXTO centrados */
 .navbar-brand {
     display: flex;
-    align-items: center;   /* centra logo y texto verticalmente */
-    gap: 10px;             /* espacio entre logo y texto */
+    align-items: center;
+    gap: 8px;
 }
+
 .navbar-brand img {
-    border-radius: 10px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-.navbar-toggler-icon {
-    background-image: none !important;  /* elimina icono default */
-}
-
-.navbar-toggler::after {
-    content: "\2630";   /* icono ≡ */
-    font-size: 26px;
-    color: #ff4da6;
-    line-height: 1;
-    display: block;
+/* COLOR DE LINKS */
+.nav-link {
+    color: #ff4da6 !important;
+    font-weight: 600;
 }
 
 .nav-link:hover {
     color: #ffe4ec !important;
 }
 
+/* MENÚ DESPLEGADO EN MÓVIL */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #1c1c1c;
+        padding: 1.2rem;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+}
 </style>
 
-<script>
-// Ajusta padding-top del main según altura de navbar
-document.addEventListener('DOMContentLoaded', function() {
-    const main = document.querySelector('main');
-    const navbar = document.querySelector('.navbar');
-    if(main && navbar) {
-        main.style.paddingTop = navbar.offsetHeight + 'px';
-    }
-});
-</script>
