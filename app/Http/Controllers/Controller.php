@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-class CursoController extends Controller
+class Controller extends BaseController
 {
-    public function show($slug)
-    {
-        $curso = Curso::where('slug', $slug)->firstOrFail();
-
-        return view('cursos.show', compact('curso'));
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }

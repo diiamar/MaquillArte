@@ -28,6 +28,48 @@
                 <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('sobre_mi') }}">Sobre mí</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                {{-- ICONO USUARIO --}}
+                <li class="nav-item dropdown">
+
+                    {{-- ICONO (abre el dropdown) --}}
+                    <a class="nav-link dropdown-toggle" href="{{ route('login') }}" id="userMenu" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" style="color:#ff4da6;">
+                        <i class="bi bi-person-circle fs-4"></i>
+                    </a>
+
+                    {{-- MENÚ PARA USUARIO NO LOGUEADO --}}
+                    @guest
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item" href="{{ route('register') }}">Crear cuenta</a></li>
+                    </ul>
+                    @endguest
+
+                    {{-- MENÚ PARA USUARIO LOGUEADO --}}
+                    @auth
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+
+                        <li class="dropdown-header fw-bold">
+                            Hola, {{ Auth::user()->name }}
+                        </li>
+
+                        <li><a class="dropdown-item" href="/perfil">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="/mis-compras">Historial de compras</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="dropdown-item text-danger">Cerrar sesión</button>
+                            </form>
+                        </li>
+
+                    </ul>
+                    @endauth
+
+                </li>
+
                 
             </ul>
         </div>
@@ -50,10 +92,8 @@
 
 /* ICONO PERSONALIZADO */
 .navbar-toggler-icon {
-    filter: invert(82%) sepia(52%) saturate(2500%) hue-rotate(300deg) brightness(100%) contrast(95%);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,77,166,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
-
 
 /* LOGO + TEXTO centrados */
 .navbar-brand {
@@ -71,6 +111,11 @@
 .nav-link {
     color: #ff4da6 !important;
     font-weight: 600;
+}
+/* ICONOS DEL MENÚ */
+.nav-link i {
+    color: #ff4da6 !important;
+    font-size: 1.2rem;
 }
 
 .nav-link:hover {

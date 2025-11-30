@@ -36,6 +36,8 @@ header {
     background: linear-gradient(rgba(0,0,0,10), rgba(174, 35, 133, 0.5)), url('.jpg') center/cover;
     color: white;
     padding: 6rem 0;
+    margin-top: -20px !important;
+
 }
 header h1 {
     font-size: 3rem;
@@ -165,4 +167,3 @@ header h1 {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.18);
 }
-

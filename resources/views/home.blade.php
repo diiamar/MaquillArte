@@ -5,14 +5,16 @@
 @section('content')
 
   <!-- Hero -->
-  <header class="text-center">
+  <header class="text-center hero-section">
     <div class="container">
       <h1 class="fw-bold">Maquilladora Profesional</h1>
       <p class="lead">Resalta tu belleza con técnicas actuales y personalizadas</p>
+
       <a href="#reservas" class="btn btn-rosa me-2">Reservar cita</a>
       <a href="#cursos" class="btn btn-outline-light">Ver cursos</a>
     </div>
-  </header>
+</header>
+
 
   <!-- Servicios -->
    <section id="servicios" class="py-5">
