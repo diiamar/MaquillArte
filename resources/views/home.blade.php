@@ -71,7 +71,7 @@
         <div class="card-body">
           <h5 class="card-title fw-bold text-center">Automaquillaje</h5>
           <p class="card-text mb-3 text-center">Eres tu propia artista, tu belleza, tu decisión.</p>
-          <a href="#" class="btn btn-rosa w-100">Ver más</a>
+          <a href="#" class="btn btn-rosa w-100">Comprar curso</a>
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@
         <div class="card-body">
           <h5 class="card-title fw-bold text-center">Social</h5>
           <p class="card-text text-center">Domina las bases del maquillaje social.</p>
-          <a href="#" class="btn btn-rosa w-100">Comprar curso</a>
+          <a href="{{ route('cursos') }}" class="btn btn-rosa w-100">Comprar curso</a>
         </div>
       </div>
     </div>

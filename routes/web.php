@@ -5,8 +5,7 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\PanelController;
-use App\Http\Controllers\AuthController; // ← IMPORTANTE
-
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +21,9 @@ Route::get('/sobre_mi', function () {
     return view('sobre_mi');
 })->name('sobre_mi');
 
-
 /*
 |--------------------------------------------------------------------------
-| CURSOS
+| CURSOS (público: ver listado y detalle)
 |--------------------------------------------------------------------------
 */
 
@@ -33,26 +31,35 @@ Route::get('/cursos', [CursoController::class, 'index'])->name('cursos');
 Route::get('/curso/{slug}', [CursoController::class, 'show'])->name('curso.show');
 Route::get('/buscar-cursos', [CursoController::class, 'buscar'])->name('cursos.buscar');
 
-
 /*
 |--------------------------------------------------------------------------
-| SERVICIOS
+| SERVICIOS (público: ver listado y detalle)
 |--------------------------------------------------------------------------
 */
 
 Route::get('/servicios', [ServicioController::class, 'index'])->name('servicios.index');
 Route::get('/servicio/{slug}', [ServicioController::class, 'show'])->name('servicio.show');
 
-
 /*
 |--------------------------------------------------------------------------
-| RESERVAS
+| RESERVAS (protegido: reservar solo si está logueado)
 |--------------------------------------------------------------------------
 */
 
-Route::get('/reservar/{tipo}/{id}', [ReservaController::class, 'form'])->name('reservas.form');
-Route::post('/reservar/confirmar', [ReservaController::class, 'store'])->name('reservas.store');
+Route::middleware('auth')->group(function () {
 
+    // Página "Reservas" del navbar: muestra el calendario de lo seleccionado
+    Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas');
+
+    // Cuando el usuario pulsa "Reservar" en un curso/servicio:
+    // guardamos la selección y redirigimos a /reservas
+    Route::get('/reservar/{tipo}/{id}', [ReservaController::class, 'select'])
+        ->name('reservas.select');
+
+    // Confirmar reserva
+    Route::post('/reservar/confirmar', [ReservaController::class, 'store'])
+        ->name('reservas.store');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -80,8 +87,6 @@ Route::post('/register', [AuthController::class, 'register'])
 Route::post('/logout', [AuthController::class, 'logout'])
     ->name('logout')
     ->middleware('auth');
-
-
 /*
 |--------------------------------------------------------------------------
 | ÁREA PRIVADA DEL USUARIO

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container d-flex justify-content-center">
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
     <div class="card shadow p-4 mt-5" style="width: 420px; border-radius:20px;">
 
         <h2 class="text-center fw-bold mb-3" style="color:#ff4da6;">Crear Cuenta</h2>
@@ -15,7 +15,7 @@
             </div>
         @endif
 
-        <form method="POST" action="c">
+        <form method="POST" action="{{ route('register.process') }}">
             @csrf
 
             <div class="mb-3">

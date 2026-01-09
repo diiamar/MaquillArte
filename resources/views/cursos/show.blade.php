@@ -61,7 +61,7 @@
                         {!! nl2br(e($curso->descripcion_larga)) !!}
                     </p>
 
-                    <a href="/#reservas" class="btn btn-rosa btn-lg mt-4 w-100 py-3">
+                    <a href="{{ route('reservas.select', ['tipo' => 'curso', 'id' => $curso->id]) }}" class="btn btn-rosa btn-lg mt-4 w-100 py-3">
                         Reservar este curso
                     </a>
                 </div>

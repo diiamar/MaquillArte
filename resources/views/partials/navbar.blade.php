@@ -25,14 +25,14 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('cursos') }}">Cursos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('reservas') }}">Reservas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('sobre_mi') }}">Sobre mí</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 {{-- ICONO USUARIO --}}
                 <li class="nav-item dropdown">
 
                     {{-- ICONO (abre el dropdown) --}}
-                    <a class="nav-link dropdown-toggle" href="{{ route('login') }}" id="userMenu" role="button"
+                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false" style="color:#ff4da6;">
                         <i class="bi bi-person-circle fs-4"></i>
                     </a>
